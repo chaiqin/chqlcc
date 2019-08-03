@@ -1,0 +1,13 @@
+<scroll-view scroll-y="true" style="height:{{scrollH}}px" bindscrolltolower="loadTask">
+  <view class="list" wx:key="unique" wx:for="{{taskList}}">
+    <navigator url='/pages/review/review?id={{item._id}}'>
+      <view class='title'>{{item.title}}</view>
+      <view class="warm">
+        <view wx:if="{{item.status == 1}}" class='warm-msg'>进行中</view>
+        <view wx:elif="{{item.status == 2}}" class='warm-msgt'>正在审核</view>
+        <view class='warm-limit'>{{item.end_time}}截止 | +{{item.reward}} | -{{item.punishment}}
+        </view>
+      </view>
+    </navigator>
+  </view>
+</scroll-view>

@@ -1,0 +1,36 @@
+<!--pages/publish/publish.wxml-->
+<form bindsubmit="formSubmit" report-submit="true">
+  <view class='interval'>
+    <view class='title'>任务：</view>
+    <view class='title-content'>
+      <input type='text' disabled value='{{task.title}}'></input>
+    </view>
+  </view>
+  <view class='interval'>
+    <view class='title'>奖励积分：</view>
+    <view class='title-content'>
+      <input class='title-text' disabled value='{{task.reward}}' type='text'></input>
+    </view>
+  </view>
+  <view wx:if="{{task.status==1}}">
+    <view class="gallery">
+      <view class="item" wx:for="{{images}}" wx:key="">
+        <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" mode="aspectFill" />
+
+        <!-- 删除按钮 -->
+        <view class="delete" bindtap="delete" data-index="{{index}}">X</view>
+      </view>
+      <view wx:if="{{task.status == 1}}" class="item" bindtap="chooseImage">
+        <view class='addIcon'>+</view>
+      </view>
+    </view>
+    <button class='publish' form-type="submit">提交</button>
+  </view>
+  <view wx:elif="{{task.status==2}}">
+    <view class="gallery">
+      <view class="item" wx:for="{{images}}" wx:key="">
+        <image src="{{item}}" data-src="{{item}}" bindtap="previewImage" mode="aspectFill" />
+      </view>
+    </view>
+  </view>
+</form>

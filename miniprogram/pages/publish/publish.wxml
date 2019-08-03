@@ -1,0 +1,42 @@
+<!--pages/publish/publish.wxml-->
+<form bindsubmit="formSubmit" report-submit="true">
+  <view class='interval'>
+    <view class='title'>任务：</view>
+    <view class='title-content'>
+      <input type='text' name='title' placeholder='请输入标题'></input>
+    </view>
+  </view>
+  <view class='interval'>
+    <view class='title'>奖励积分：</view>
+    <view class='title-content'>
+      <input class='title-text' name='reward' type='text' placeholder='请输入数值'></input>
+    </view>
+  </view>
+  <view class='interval'>
+    <view class='title'>惩罚积分：</view>
+    <view class='title-content'>
+      <input class='title-text' name='punishment' type='text' placeholder='请输入数值'></input>
+    </view>
+  </view>
+  <view class='interval'>
+    <view class='title'>开始日期：</view>
+    <view class='title-content'>
+      <picker mode="date" value="{{date}}" name='start_time' start="{{date}}" end="2019-12-01" bindchange="bindDateChange">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <view class='interval'>
+    <view class='title'>截止日期：</view>
+    <view class='title-content'>
+      <picker mode="date" start="{{end_date}}" value='{{end_date}}' name='end_time' end="2019-12-01" bindchange="bindDateChangeEnd">
+        <view class="picker">
+          {{end_date}}
+        </view>
+      </picker>
+    </view>
+  </view>
+  <button class='publish' form-type="submit">发布</button>
+</form>

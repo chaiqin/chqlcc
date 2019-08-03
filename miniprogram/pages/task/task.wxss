@@ -1,0 +1,55 @@
+/* pages/task/task.wxss */
+
+page {
+  background: #f6f6f6;
+}
+
+.list {
+  margin-top: 40rpx;
+  height: 120rpx;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: column;
+  padding: 10rpx 0;
+}
+
+.title {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 38rpx;
+  margin-left: 30rpx;
+}
+
+.warm {
+  height: 60rpx;
+  line-height: 60rpx;
+  font-size: 32rpx;
+  margin-left: 30rpx;
+  color: #989898;
+  display: flex;
+  flex-direction: row;
+}
+
+.warm-limit {
+  margin-left: 20rpx;
+}
+
+.warm-msg {
+  color: #00e500;
+}
+
+.warm-msgt {
+  color: #00eaff;
+}
+
+.tianjia {
+  position: fixed;
+  width: 100rpx;
+  height: 100rpx;
+  bottom: 30rpx;
+  right: 20rpx;
+}

@@ -1,0 +1,61 @@
+{
+  "pages": [
+    "pages/task/task",
+    "pages/me/me",
+    "pages/authorize/authorize",
+    "pages/myAllTask/myAllTask",
+    "pages/seeTask/seeTask",
+    "pages/myExchange/myExchange",
+    "pages/store/store",
+    "pages/love/love",
+    "pages/itsStore/itsStore",
+    "pages/addProduct/addProduct",
+    "pages/publish/publish",
+    "pages/reviewedList/reviewedList",
+    "pages/review/review",
+    "pages/submit/submit",
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#00EAFF",
+    "navigationBarTitleText": "chq ❤ lcc",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#000000",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/task/task",
+        "text": "任务",
+        "iconPath": "/images/task-1.png",
+        "selectedIconPath": "/images/task-2.png"
+      },
+      {
+        "pagePath": "pages/store/store",
+        "text": "奖品",
+        "iconPath": "/images/store-1.png",
+        "selectedIconPath": "/images/store-2.png"
+      },
+      {
+        "pagePath": "pages/love/love",
+        "text": "爱人",
+        "iconPath": "/images/love-1.png",
+        "selectedIconPath": "/images/love-2.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "/images/me-1.png",
+        "selectedIconPath": "/images/me-2.png"
+      }
+    ]
+  }
+}

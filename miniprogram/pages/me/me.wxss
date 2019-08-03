@@ -1,0 +1,72 @@
+/* pages/love/love.wxss */
+
+page {
+  background: #f6f6f6;
+}
+
+.userinfo {
+  margin-top: 40rpx;
+  height: 140rpx;
+  width: 100%;
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-left: none;
+  border-right: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 300ms ease;
+}
+
+.userinfo-avatar {
+  width: 100rpx;
+  height: 100rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
+}
+
+.userinfo-nickname {
+  font-size: 38rpx;
+  color: #007aff;
+}
+
+.userinfo-integral {
+  font-size: 30rpx;
+  color: #696969;
+}
+
+.list {
+  width: 100%;
+  height: 70rpx;
+  margin-top: 40rpx;
+  background: #fff;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  transition: all 300ms ease;
+}
+
+.list-sub {
+  height: 70rpx;
+  font-size: 35rpx;
+  border-bottom:1rpx solid rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list-content {
+  margin-left: 20rpx;
+  line-height: 70rpx;
+}
+.list-arrow { 
+  margin-right: 10rpx;
+ height: 60rpx;
+ line-height: 60rpx;
+}
+
+.qiandao{
+  margin-left: 290rpx;
+}

@@ -1,0 +1,50 @@
+<!--pages/love/love.wxml-->
+<view class="container">
+
+  <!-- 用户 openid -->
+  <view class="userinfo">
+    <button class="userinfo-avatar" style="background-image: url({{userinfo.avatarUrl}})"></button>
+    <view>
+      <view class="userinfo-nickname">
+        {{userinfo.nickName}}
+      </view>
+      <view class="userinfo-integral">
+        累计积分：{{userinfo.integral}}
+      </view>
+    </view>
+    <view class='qiandao'>
+      <i wx:if="{{is_qiandao}}" class="iconfont icon-qiandao" style="font-size:60rpx;color:#707070"></i>
+      <i wx:else class="iconfont icon-qiandao" style="font-size:60rpx;color:#007aff" bindtap="qiandao"></i>
+    </view>
+  </view>
+
+  <view class='list'>
+    <navigator url='/pages/myAllTask/myAllTask?user_id={{userinfo._id}}'>
+      <view class='list-sub'>
+        <view class='list-content'>我的任务列表</view>
+        <view class='list-arrow'>
+          <i class="iconfont icon-right"></i>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
+  <view class='list'>
+    <navigator url="/pages/myExchange/myExchange?user_id={{userinfo.love_user}}&status=2">
+      <view class='list-sub'>
+        <view class='list-content'>未使用奖品</view>
+        <view class='list-arrow'>
+          <i class="iconfont icon-right"></i>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='/pages/myExchange/myExchange?user_id={{userinfo.love_user}}&status=3'>
+      <view class='list-sub'>
+        <view class='list-content'>已使用奖品</view>
+        <view class='list-arrow'>
+          <i class="iconfont icon-right"></i>
+        </view>
+      </view>
+    </navigator>
+  </view>
+</view>

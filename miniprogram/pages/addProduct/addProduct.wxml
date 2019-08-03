@@ -1,0 +1,40 @@
+<!--pages/publish/publish.wxml-->
+<form bindsubmit="formSubmit">
+  <view class='interval'>
+    <view class='title'>奖品名称：</view>
+    <view class='title-content'>
+      <input type='text' name='name' placeholder='请输入奖品名称'></input>
+    </view>
+  </view>
+  <view class='interval'>
+    <view class='title'>奖品价格：</view>
+    <view class='title-content'>
+      <input class='title-text' name='price' type='text' placeholder='请输入价格'></input>
+    </view>
+  </view>
+  <view class='interval'>
+    <view class='title'>兑换积分：</view>
+    <view class='title-content'>
+      <input class='title-text' name='integral' type='text' placeholder='请输入兑换所需积分'></input>
+    </view>
+  </view>
+  <view class='interval-img'>
+    <view class='title'>封面图片：</view>
+    <view class='title-content'>
+      <view class="gallery">
+        <view class="item" wx:if="{{image}}" wx:key="">
+          <image src="{{image}}" data-src="{{image}}" bindtap="previewImage" mode="aspectFill" />
+
+          <!-- 删除按钮 -->
+          <view class="delete" bindtap="delete">X</view>
+        </view>
+        <view wx:if="{{!image}}" class="item" bindtap="chooseImage">
+          <view class='addIcon'>+</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+
+  <button class='publish' form-type="submit">添加</button>
+</form>
