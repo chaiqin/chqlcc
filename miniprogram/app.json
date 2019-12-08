@@ -57,5 +57,6 @@
         "selectedIconPath": "/images/me-2.png"
       }
     ]
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }

@@ -52,6 +52,7 @@ Page({
     var product = e.detail.value;
     //类型转换
     product.integral = Number(product.integral)
+    product.limit = Number(product.limit)
     //上传图片
     var image = this.data.image;
     var timestamp = Date.parse(new Date());
@@ -63,7 +64,6 @@ Page({
         // 返回文件 ID
         product.image = res.fileID;
         product.creator = app.globalData.userinfo._id;
-        product.status = 1;
         product.exchange_time = String(0);
         //提交数据
         const db = wx.cloud.database();

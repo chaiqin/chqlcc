@@ -93,11 +93,12 @@ Page({
    * 获得商品
    */
   loadImages: function() {
+    const _ = db.command
     //获得商品
     let images = [];
     db.collection('product').where({
       creator: app.globalData.userinfo.love_user,
-      status: 1
+      limit: _.neq(0)
     }).skip(this.data.length).get().then(res => {
       images = res.data;
       //商品数量更新
@@ -116,45 +117,54 @@ Page({
    * 兑换商品
    */
   duihuan: function(e) {
-	  utils.showLoading('加载中...');
-    let product_id = e.currentTarget.dataset.id;
-    let integral = e.currentTarget.dataset.integral;
-    wx.cloud.callFunction({
-      name: 'duiHuan',
-      data: {
-        user_id: app.globalData.userinfo._id,
-        product_id: product_id,
-        integral: integral
-      },
+    wx.showModal({
+      title: '兑换',
+      content: '确定兑换吗？',
       success(res) {
-		  utils.hideLoading();
-        console.log(res)
-        var code = res.result.code;
-        wx.showModal({
-          title: '提示',
-          content: res.result.msg,
-          showCancel: false,
-          success(res) {
-            if (res.confirm && code == 0) {
-              //刷新商品
-              let data = {
-                scrollH: 0,
-                imgWidth: 0,
-                interval: 0,
-                loadingCount: 0,
-                images: [],
-                col1: [],
-                col2: [],
-                length: 0
-              }
-              that.setData(data);
-              that.onLoad();
-            }
-          }
-        })
-      },
-      fail: console.error
+        if (res.confirm) {
+          utils.showLoading('加载中...');
+          let product_id = e.currentTarget.dataset.id;
+          let integral = e.currentTarget.dataset.integral;
+          wx.cloud.callFunction({
+            name: 'duiHuan',
+            data: {
+              user_id: app.globalData.userinfo._id,
+              product_id: product_id,
+              integral: integral
+            },
+            success(res) {
+              utils.hideLoading();
+              console.log(res)
+              var code = res.result.code;
+              wx.showModal({
+                title: '提示',
+                content: res.result.msg,
+                showCancel: false,
+                success(res) {
+                  if (res.confirm && code == 0) {
+                    //刷新商品
+                    let data = {
+                      scrollH: 0,
+                      imgWidth: 0,
+                      interval: 0,
+                      loadingCount: 0,
+                      images: [],
+                      col1: [],
+                      col2: [],
+                      length: 0
+                    }
+                    that.setData(data);
+                    that.onLoad();
+                  }
+                }
+              })
+            },
+            fail: console.error
+          })
+        }
+      }
     })
+
 
   },
 

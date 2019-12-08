@@ -94,11 +94,12 @@ Page({
    * 获得商品
    */
   loadImages: function() {
+    const _ = db.command
     //获得商品
     let images = [];
     db.collection('product').where({
       creator: app.globalData.userinfo._id,
-      status:1
+      limit: _.neq(0)
     }).skip(this.data.length).get().then(res => {
       console.log(res)
       images = res.data;

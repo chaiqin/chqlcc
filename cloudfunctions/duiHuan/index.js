@@ -6,11 +6,16 @@ cloud.init({
 })
 
 const db = cloud.database()
+const _ = db.command
 // 云函数入口函数
 exports.main = async(event, context) => {
   let user = null;
+  let product = null;
   await db.collection('users').doc(event.user_id).get().then(res => {
     user = res.data;
+  })
+  await db.collection('product').doc(event.product_id).get().then(res => {
+    product = res.data;
   })
 
   if (user.integral < event.integral) {
@@ -30,7 +35,14 @@ exports.main = async(event, context) => {
     }
   })
 
-  //修改商品状态
+  //减剩余兑换次数
+  await db.collection('product').doc(event.product_id).update({
+    data: {
+      limit: _.inc(-1)
+    }
+  })
+
+  //新增兑奖记录
   var timestamp = Date.parse(new Date());
   var date = new Date(timestamp);
   //年  
@@ -40,10 +52,15 @@ exports.main = async(event, context) => {
   //日  
   var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
   let exchange_time = Y + '-' + M + '-' + D;
-  await db.collection('product').doc(event.product_id).update({
-    data: {
-      status: 2,
-      exchange_time : exchange_time
+  await db.collection('exchange').add({
+    data:{
+      creator: product.creator,
+      exchange_time: exchange_time,
+      image:product.image,
+      integral:product.integral,
+      name:product.name,
+      price:product.price,
+      status:2
     }
   })
 

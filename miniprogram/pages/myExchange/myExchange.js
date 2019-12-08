@@ -101,7 +101,7 @@ Page({
   loadImages: function () {
     //获得商品
     let images = [];
-    db.collection('product').where({
+    db.collection('exchange').where({
       creator: creator,
       status: this.data.status
     }).skip(this.data.length).get().then(res => {
@@ -131,12 +131,13 @@ Page({
               product_id: product_id,
             },
             success(res) {
+              console.log(res);
               utils.hideLoading();
               wx.showModal({
                 title: '提示',
                 content: res.result.msg,
                 showCancel: false,
-                success(res) {
+                success(showres) {
                   wx.redirectTo({
                     url: '/pages/myExchange/myExchange?user_id='+creator+"&status=2",
                   })

@@ -8,7 +8,7 @@
         </view>
         <view class="product-price-wrap">
           <p class="product-price-new">￥{{item.price}}</p>
-          <p class="product-price-old">{{item.integral}}积分</p>
+          <p class="product-price-old">{{item.integral}}积分  剩余:{{item.limit}}</p>
           <p class="discount"><button data-id='{{item._id}}' data-integral='{{item.integral}}' bindtap='duihuan'>兑换</button></p>
         </view>
       </view>
@@ -21,7 +21,7 @@
         </view>
         <view class="product-price-wrap">
           <p class="product-price-new">￥{{item.price}}</p>
-          <p class="product-price-old">{{item.integral}}积分</p>
+          <p class="product-price-old">{{item.integral}}积分  剩余:{{item.limit}}</p>
           <p class="discount"><button data-id='{{item._id}}' data-integral='{{item.integral}}' bindtap='duihuan'>兑换</button></p>
         </view>
       </view>

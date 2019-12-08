@@ -21,9 +21,12 @@
   <view class='list'>
     <navigator url='/pages/myAllTask/myAllTask?user_id={{userinfo._id}}'>
       <view class='list-sub'>
-        <view class='list-content'>我的任务列表</view>
-        <view class='list-arrow'>
-          <i class="iconfont icon-right"></i>
+        <i class="iconfont icon-renwuzhongxin list-icon" style="color: blue;"></i>
+        <view class='list-right'>
+          <view class='list-content'>我的任务列表</view>
+          <view class='list-arrow'>
+            <i class="iconfont icon-right"></i>
+          </view>
         </view>
       </view>
     </navigator>
@@ -32,17 +35,23 @@
   <view class='list'>
     <navigator url="/pages/myExchange/myExchange?user_id={{userinfo.love_user}}&status=2">
       <view class='list-sub'>
-        <view class='list-content'>未使用奖品</view>
-        <view class='list-arrow'>
-          <i class="iconfont icon-right"></i>
+        <i class="iconfont icon-jiangli- list-icon" style="color: #FFBC00;"></i>
+        <view class='list-right'>
+          <view class='list-content'>未使用奖品</view>
+          <view class='list-arrow'>
+            <i class="iconfont icon-right"></i>
+          </view>
         </view>
       </view>
     </navigator>
     <navigator url='/pages/myExchange/myExchange?user_id={{userinfo.love_user}}&status=3'>
       <view class='list-sub'>
-        <view class='list-content'>已使用奖品</view>
-        <view class='list-arrow'>
-          <i class="iconfont icon-right"></i>
+        <i class="iconfont icon-yishiyong list-icon" style="color: #333333;"></i>
+        <view class='list-right'>
+          <view class='list-content'>已使用奖品</view>
+          <view class='list-arrow'>
+            <i class="iconfont icon-right"></i>
+          </view>
         </view>
       </view>
     </navigator>

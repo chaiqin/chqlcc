@@ -8,7 +8,7 @@
         </view>
         <view class="product-price-wrap">
           <p class="product-price-new">￥{{item.price}}</p>
-          <p class="product-price-old">{{item.integral}}积分</p>
+          <p class="product-price-old">{{item.integral}}积分  剩余:{{item.limit}}</p>
         </view>
       </view>
     </view>
@@ -20,7 +20,7 @@
         </view>
         <view class="product-price-wrap">
           <p class="product-price-new">￥{{item.price}}</p>
-          <p class="product-price-old">{{item.integral}}积分</p>
+          <p class="product-price-old">{{item.integral}}积分  剩余:{{item.limit}}</p>
         </view>
       </view>
     </view>

@@ -18,6 +18,12 @@
       <input class='title-text' name='integral' type='text' placeholder='请输入兑换所需积分'></input>
     </view>
   </view>
+  <view class='interval'>
+    <view class='title'>限购次数：</view>
+    <view class='title-content'>
+      <input class='title-text' name='limit' type='text' value="1" placeholder='请输入限制兑换次数'></input>
+    </view>
+  </view>
   <view class='interval-img'>
     <view class='title'>封面图片：</view>
     <view class='title-content'>
