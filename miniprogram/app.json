@@ -1,6 +1,8 @@
 {
   "pages": [
     "pages/task/task",
+    "pages/write/write",
+    "pages/memory/memory",
     "pages/me/me",
     "pages/authorize/authorize",
     "pages/myAllTask/myAllTask",
@@ -43,6 +45,12 @@
         "text": "奖品",
         "iconPath": "/images/store-1.png",
         "selectedIconPath": "/images/store-2.png"
+      },
+      {
+        "pagePath": "pages/memory/memory",
+        "text": "Memory",
+        "iconPath": "/images/forum-1.png",
+        "selectedIconPath": "/images/forum-2.png"
       },
       {
         "pagePath": "pages/love/love",

@@ -1,0 +1,5 @@
+<navigator url='/pages/write/write'>
+  <view class='tianjia'>
+    <i class="iconfont icon-xie" style="color:red;font-size:90rpx" bindtap='shuaxin'></i>
+  </view>
+</navigator>

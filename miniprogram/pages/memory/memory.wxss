@@ -1,0 +1,8 @@
+/* pages/memory/memory.wxss */
+.tianjia {
+  position: fixed;
+  width: 100rpx;
+  height: 100rpx;
+  bottom: 30rpx;
+  right: 20rpx;
+}
