@@ -1,8 +1,28 @@
 /* pages/memory/memory.wxss */
+page {
+  background: #f6f6f6;
+}
+
 .tianjia {
   position: fixed;
   width: 100rpx;
   height: 100rpx;
   bottom: 30rpx;
   right: 20rpx;
+}
+
+.memoty{
+  background-color: red;
+  width: 100%;
+  padding: 40rpx;
+  margin-top: 30rpx;
+}
+
+.userinfo-avatar {
+  width: 80rpx;
+  height: 80rpx;
+  margin: 0rpx;
+  border-radius: 50%;
+  background-size: cover;
+  background-color: white;
 }

@@ -3,3 +3,6 @@
     <i class="iconfont icon-xie" style="color:red;font-size:90rpx" bindtap='shuaxin'></i>
   </view>
 </navigator>
+<view class='memoty'>
+  <button class="userinfo-avatar" style="background-image: url('https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKv7eKSxjJIAuic3Bl6cWz33ggibHb1WROFBZ4AaJXLCCPT5HhrcMDLQO5ib2rpfK0iaibx5ofTtpWuMaQ/132')"></button>
+</view>

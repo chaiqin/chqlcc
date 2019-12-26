@@ -1,5 +1,6 @@
 // pages/publish/publish.js
 var utils = require('../../utils/utils.js')
+var date = require('../../utils/date')
 const app = getApp();
 const db = wx.cloud.database();
 var that;
@@ -25,18 +26,11 @@ Page({
         love_user: res.data
       })
     })
-    var timestamp = Date.parse(new Date());
-    var date = new Date(timestamp);
-    //年  
-    var Y = date.getFullYear();
-    //月  
-    var M = (date.getMonth() + 1 < 10 ? '0' + (date.getMonth() + 1) : date.getMonth() + 1);
-    //日  
-    var D = date.getDate() < 10 ? '0' + date.getDate() : date.getDate();
+    var nowDate = date.getDate();
     this.setData({
-      date: Y + '-' + M + '-' + D,
-      end_date: Y + '-' + M + '-' + D,
-      now_date: Y + '-' + M + '-' + D,
+      date: nowDate,
+      end_date: nowDate,
+      now_date: nowDate,
     });
   },
 

@@ -1,7 +1,7 @@
 // pages/love/love.js
 const app = getApp()
 var that;
-var getData = require('../../utils/getDate')
+var date = require('../../utils/date')
 Page({
 
   /**
@@ -20,7 +20,7 @@ Page({
     const db = wx.cloud.database();
     db.collection('users').doc(app.globalData.userinfo._id).get().then(res => {
       let is_quandao = 0;
-      if (res.data.signIn_time == getData()) {
+      if (res.data.signIn_time == date.getDate()) {
         is_quandao = 1;
       }
       this.setData({
