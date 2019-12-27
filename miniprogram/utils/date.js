@@ -28,7 +28,13 @@ function getDate(){
   return new Date().Format("yyyy-MM-dd");
 }
 
+//获取当前日期，年月日时分秒
+function getDateTime() {
+  return new Date().Format("yyyy-MM-dd hh:mm:ss");
+}
+
 module.exports = {
   getDateByFormat: getDateByFormat,
   getDate: getDate,
+  getDateTime: getDateTime,
 }

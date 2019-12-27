@@ -1,8 +1,24 @@
+<view  style="height:{{scrollH}}px" >
+  <view class='memoty'  wx:key="unique" wx:for="{{list}}">
+    <view class='top'>
+      <button class="userinfo-avatar" style="background-image: url('')"></button>
+      <view class='top-next'>
+        <view class='name'>{{item.name}}</view>
+        <view class='time'>{{item.create_time}}</view>
+      </view>
+    </view>
+    <view class='content'>
+      {{item.content}}
+    </view>
+    <view class="gallery">
+      <view class="item" wx:for="{{list.images}}" wx:for-item="img">
+        <image src="{{img}}" mode="aspectFill" />
+      </view>
+    </view>
+  </view>
+</view>
 <navigator url='/pages/write/write'>
   <view class='tianjia'>
     <i class="iconfont icon-xie" style="color:red;font-size:90rpx" bindtap='shuaxin'></i>
   </view>
 </navigator>
-<view class='memoty'>
-  <button class="userinfo-avatar" style="background-image: url('https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTKv7eKSxjJIAuic3Bl6cWz33ggibHb1WROFBZ4AaJXLCCPT5HhrcMDLQO5ib2rpfK0iaibx5ofTtpWuMaQ/132')"></button>
-</view>

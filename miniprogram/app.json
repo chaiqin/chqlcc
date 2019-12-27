@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/memory/memory",
     "pages/task/task",
+    "pages/memory/memory",
     "pages/write/write",
     "pages/me/me",
     "pages/authorize/authorize",

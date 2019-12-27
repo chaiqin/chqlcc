@@ -157,7 +157,7 @@ Page({
         content: content,
         images: uploadedImages,
         user_id: app.globalData.userinfo._id,
-        create_time: date.getDate()
+        create_time: date.getDateTime()
       },
       success(res) {
         utils.hideLoading();
