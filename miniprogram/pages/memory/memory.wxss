@@ -15,8 +15,8 @@ page {
   box-sizing:border-box;
   background-color: white;
   width: 100%;
-  padding: 40rpx;
-  margin-top: 30rpx;
+  padding: 36rpx;
+  margin-top: 25rpx;
 }
 
 .userinfo-avatar {

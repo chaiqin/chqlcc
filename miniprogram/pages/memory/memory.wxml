@@ -1,18 +1,26 @@
-<view  style="height:{{scrollH}}px" >
-  <view class='memoty'  wx:key="unique" wx:for="{{list}}">
+<swiper indicator-dots='true' autoplay='true' interval='4000'>
+  <block wx:for="{{swiperImgs}}" wx:key="{{index}}">
+    <swiper-item>
+      <image src='{{item}}'></image>
+    </swiper-item>
+    <swiper-item>
+      <image src='{{item}}'></image>
+    </swiper-item>
+  </block>
+</swiper>
+<view style="height:{{scrollH}}px">
+  <view class='memoty' wx:key="unique" wx:for="{{list}}" wx:for-index="idx">
     <view class='top'>
-      <button class="userinfo-avatar" style="background-image: url('')"></button>
+      <button class="userinfo-avatar" style="background-image: url('{{item.user.avatarUrl}}')"></button>
       <view class='top-next'>
-        <view class='name'>{{item.name}}</view>
+        <view class='name'>{{item.user.nickName}}</view>
         <view class='time'>{{item.create_time}}</view>
       </view>
     </view>
-    <view class='content'>
-      {{item.content}}
-    </view>
+    <view class='content'>{{item.content}}</view>
     <view class="gallery">
-      <view class="item" wx:for="{{list.images}}" wx:for-item="img">
-        <image src="{{img}}" mode="aspectFill" />
+      <view class="item" wx:for="{{item.images}}" wx:for-item="img">
+        <image src="{{img}}" data-src="{{img}}" data-index="{{idx}}" bindtap="previewImage" mode="aspectFill" />
       </view>
     </view>
   </view>

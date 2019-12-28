@@ -1,6 +1,8 @@
 // pages/memory/memory.js
+const app = getApp()
 var that;
 const db = wx.cloud.database();
+const _ = db.command
 Page({
 
   /**
@@ -11,12 +13,16 @@ Page({
     length: 0,
     scrollH: 0,
     limit:10,
+    loveUser:"",
+    isShowImg:false,
+    swiperImgs:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log("load");
     that = this;
     wx.getSystemInfo({
       success: (res) => {
@@ -24,6 +30,11 @@ Page({
           scrollH: res.windowHeight
         })
       }
+    })
+    db.collection('users').doc(app.globalData.userinfo.love_user).get().then(res => {
+      this.setData({
+        loveUser: res.data
+      })
     })
     this.loadList();
   },
@@ -39,6 +50,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    if(this.data.isShowImg){
+      this.setData({
+        isShowImg: false
+      })
+      return
+    }
     this.refresh();
   },
 
@@ -82,9 +99,19 @@ Page({
   //加载列表
   loadList: function(e) {
     var list = that.data.list;
-
-    db.collection('memory').orderBy('create_time', 'desc')
+    var userinfo = app.globalData.userinfo;
+    var loveUser = that.data.loveUser;
+    db.collection('memory').where({
+      user_id: _.eq(userinfo._id).or(_.eq(userinfo.love_user))
+    }).orderBy('create_time', 'desc')
       .skip(that.data.length).limit(that.data.limit).get().then(res => {
+        for(var i = 0; i<res.data.length;i++){
+          if(res.data[i].user_id == userinfo._id){
+            res.data[i].user = userinfo;
+          } else if (res.data[i].user_id == loveUser._id){
+            res.data[i].user = loveUser;
+          }
+        }
       console.log(res);
       list = list.concat(res.data);
       that.setData({
@@ -97,6 +124,7 @@ Page({
 
   },
 
+  //刷新
   refresh:function(){
     let data = {
       list: [],
@@ -105,5 +133,18 @@ Page({
     }
     this.setData(data)
     this.onLoad()
-  }
+  },
+
+  // 图片预览
+  previewImage: function (e) {
+    this.setData({
+      isShowImg: true   //防预览后刷新
+    })
+    var current = e.target.dataset.src
+    var index = e.target.dataset.index
+    wx.previewImage({
+      current: current,
+      urls: this.data.list[index].images
+    })
+  },
 })
