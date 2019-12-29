@@ -1,6 +1,17 @@
 /* pages/memory/memory.wxss */
+
 page {
-  background: #F0F0F0;
+  background: #f0f0f0;
+}
+
+.lunbo {
+  height: 420rpx;
+  width: 100%;
+}
+
+.lunbo image {
+  width: 100%;
+  height: 100%;
 }
 
 .tianjia {
@@ -11,8 +22,8 @@ page {
   right: 20rpx;
 }
 
-.memoty{
-  box-sizing:border-box;
+.memoty {
+  box-sizing: border-box;
   background-color: white;
   width: 100%;
   padding: 36rpx;
@@ -29,23 +40,23 @@ page {
   margin-right: 20rpx;
 }
 
-.top{
+.top {
   display: flex;
   flex-direction: row;
   margin-bottom: 15rpx;
 }
 
-.name{
+.name {
   font-size: 30rpx;
   font-weight: bold;
 }
 
-.time{
+.time {
   font-size: 25rpx;
-  color: #969AA1;
+  color: #969aa1;
 }
 
-.content{
+.content {
   font-size: 33rpx;
 }
 

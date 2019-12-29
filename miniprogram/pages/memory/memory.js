@@ -12,16 +12,20 @@ Page({
     list: [],
     length: 0,
     scrollH: 0,
-    limit:10,
-    loveUser:"",
-    isShowImg:false,
-    swiperImgs:[],
+    limit: 10,
+    loveUser: "",
+    isShowImg: false,
+    isShowWrite: false,
+    swiperImgs: [],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function (options) {
+    if (typeof app.globalData.userinfo == "undefined"){
+      return;
+    }
     console.log("load");
     that = this;
     wx.getSystemInfo({
@@ -36,21 +40,38 @@ Page({
         loveUser: res.data
       })
     })
+
+    //防止别人访问看到
+    var id = app.globalData.userinfo._id;
+    if (id == "XHVd5pT75u22NXek" || id == "XHVd9HffS3SWtvVh"){
+      this.setData({
+        swiperImgs: [
+          "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-1.jpg",
+          "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-2.jpg",
+          "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-3.jpg",
+          "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-4.jpg",
+          "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-5.jpg",
+          "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-6.jpg",
+        ],
+        isShowWrite:true
+      })
+    }
+
     this.loadList();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
-    if(this.data.isShowImg){
+  onShow: function () {
+    if (this.data.isShowImg) {
       this.setData({
         isShowImg: false
       })
@@ -62,21 +83,21 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
     this.refresh()
     console.log('任务下拉刷新')
     wx.stopPullDownRefresh()
@@ -85,19 +106,19 @@ Page({
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
     this.loadList();
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   },
 
   //加载列表
-  loadList: function(e) {
+  loadList: function (e) {
     var list = that.data.list;
     var userinfo = app.globalData.userinfo;
     var loveUser = that.data.loveUser;
@@ -105,27 +126,27 @@ Page({
       user_id: _.eq(userinfo._id).or(_.eq(userinfo.love_user))
     }).orderBy('create_time', 'desc')
       .skip(that.data.length).limit(that.data.limit).get().then(res => {
-        for(var i = 0; i<res.data.length;i++){
-          if(res.data[i].user_id == userinfo._id){
+        for (var i = 0; i < res.data.length; i++) {
+          if (res.data[i].user_id == userinfo._id) {
             res.data[i].user = userinfo;
-          } else if (res.data[i].user_id == loveUser._id){
+          } else if (res.data[i].user_id == loveUser._id) {
             res.data[i].user = loveUser;
           }
         }
-      console.log(res);
-      list = list.concat(res.data);
-      that.setData({
-        list: list,
-        length: list.length
+        console.log(res);
+        list = list.concat(res.data);
+        that.setData({
+          list: list,
+          length: list.length
+        })
+      }).catch(err => {
+        console.error(err)
       })
-    }).catch(err => {
-      console.error(err)
-    })
 
   },
 
   //刷新
-  refresh:function(){
+  refresh: function () {
     let data = {
       list: [],
       length: 0,
@@ -145,6 +166,18 @@ Page({
     wx.previewImage({
       current: current,
       urls: this.data.list[index].images
+    })
+  },
+
+  // 轮播图片预览
+  previewLunbo: function (e) {
+    this.setData({
+      isShowImg: true   //防预览后刷新
+    })
+    var current = e.target.dataset.src
+    wx.previewImage({
+      current: current,
+      urls: this.data.swiperImgs
     })
   },
 })

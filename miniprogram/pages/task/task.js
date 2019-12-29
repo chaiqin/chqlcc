@@ -19,9 +19,9 @@ Page({
     var value = wx.getStorageSync('user');
     if (!value) {
       console.log('没缓存跳转')
-      wx.redirectTo({
-        url: '/pages/authorize/authorize',
-      })
+      // wx.redirectTo({
+      //   url: '/pages/authorize/authorize',
+      // })
     } else {
       app.globalData = {
         userinfo: value

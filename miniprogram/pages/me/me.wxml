@@ -9,7 +9,14 @@
         {{userinfo.nickName}}
       </view>
       <view class="userinfo-integral">
-        累计积分：{{userinfo.integral}}
+        <block wx:if="{{userinfo == null}}">
+          <navigator url='/pages/authorize/authorize' style='color:blue'>
+          去登录
+          </navigator>
+          </block>
+          <block wx:if="{{userinfo != null}}">
+            累计积分：{{userinfo.integral}}
+          </block>
       </view>
     </view>
     <view class='qiandao'>
