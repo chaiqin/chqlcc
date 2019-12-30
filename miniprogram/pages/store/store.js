@@ -22,6 +22,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    if (app.globalData.userinfo == "") {
+      return
+    }
+
     that = this;
     wx.getSystemInfo({
       success: (res) => {
@@ -179,7 +183,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    if (!app.checkIsLog()) {
+      return;
+    }
+    if (this.data.scrollH == 0) {
+      this.onLoad();
+    }
   },
 
   /**

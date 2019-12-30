@@ -23,9 +23,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    if (typeof app.globalData.userinfo == "undefined"){
-      return;
+    if (app.globalData.userinfo == "") {
+      return
     }
+
     console.log("load");
     that = this;
     wx.getSystemInfo({
@@ -71,13 +72,18 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    if (!app.checkIsLog()) {
+      return;
+    }
+    if (this.data.list.length == 0) {
+      this.onLoad();
+    }
     if (this.data.isShowImg) {
       this.setData({
         isShowImg: false
       })
       return
     }
-    this.refresh();
   },
 
   /**

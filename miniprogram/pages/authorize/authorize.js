@@ -51,6 +51,9 @@ Page({
       },
       success(res) {
         let me = res.result;
+        app.globalData = {
+          userinfo: me
+        }
         //将用户信息存入缓存
         wx.setStorage({
           key: 'user',

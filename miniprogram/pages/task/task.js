@@ -15,22 +15,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log("start load")
     //用户授权信息判断
     var value = wx.getStorageSync('user');
     if (!value) {
-      console.log('没缓存跳转')
-      // wx.redirectTo({
-      //   url: '/pages/authorize/authorize',
-      // })
+      return;
     } else {
       app.globalData = {
         userinfo: value
       }
-      console.log(app.globalData)
-      console.log('66')
     }
 
-    console.log('ddd')
     wx.getSystemInfo({
       success: (res) => {
         this.setData({
@@ -65,7 +60,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    if (!app.checkIsLog()) {
+      return;
+    }
+    if(this.data.taskList.length==0){
+      this.onLoad();
+    }
   },
 
   /**

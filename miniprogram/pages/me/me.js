@@ -16,6 +16,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (app.globalData.userinfo == "") {
+      return
+    }
     that = this;
     const db = wx.cloud.database();
     db.collection('users').doc(app.globalData.userinfo._id).get().then(res => {
@@ -71,7 +74,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (!app.checkIsLog()) {
+      return;
+    }
+    if (this.data.userinfo == null) {
+      this.onLoad();
+    }
   },
 
   /**

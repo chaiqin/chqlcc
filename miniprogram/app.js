@@ -11,6 +11,30 @@ App({
       })
     }
 
+    this.globalData = {
+      userinfo:""
+    }
+
   console.log('执行了app.js')
+  },
+
+  checkIsLog:function(){
+    if (this.globalData.userinfo == "") {
+      wx.showModal({
+        title: '温馨提示',
+        content: '登录信息已失效，请重新登录',
+        success(res) {
+          if (res.confirm) {
+            wx.redirectTo({
+              url: '/pages/authorize/authorize',
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+      return false;
+    }
+    return true;
   }
 })

@@ -14,6 +14,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    if (app.globalData.userinfo == "") {
+      return
+    }
     //获取爱人信息
     that = this;
     const db = wx.cloud.database();
@@ -36,7 +39,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    if (!app.checkIsLog()) {
+      return;
+    }
+    if (this.data.love_user == null) {
+      this.onLoad();
+    }
   },
 
   /**
