@@ -11,10 +11,12 @@
     </view>
   </view>
 </scroll-view>
-<view wx:if="{{is_love}}">
-  <navigator url='/pages/publish/publish'>
-    <view class='tianjia'>
-      <i class="iconfont icon-renwuliebiao_tianjiarenwu" style="color:#FF570E;font-size:80rpx"></i>
-    </view>
-  </navigator>
-</view>
+<block wx:if="{{isShowWrite}}">
+  <view wx:if="{{is_love}}">
+    <navigator url='/pages/publish/publish'>
+      <view class='tianjia'>
+        <i class="iconfont icon-renwuliebiao_tianjiarenwu" style="color:#FF570E;font-size:80rpx"></i>
+      </view>
+    </navigator>
+  </view>
+</block>

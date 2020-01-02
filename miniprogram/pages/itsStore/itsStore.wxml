@@ -8,7 +8,7 @@
         </view>
         <view class="product-price-wrap">
           <p class="product-price-new">￥{{item.price}}</p>
-          <p class="product-price-old">{{item.integral}}积分  剩余:{{item.limit}}</p>
+          <p class="product-price-old">{{item.integral}}积分 剩余:{{item.limit}}</p>
         </view>
       </view>
     </view>
@@ -20,7 +20,7 @@
         </view>
         <view class="product-price-wrap">
           <p class="product-price-new">￥{{item.price}}</p>
-          <p class="product-price-old">{{item.integral}}积分  剩余:{{item.limit}}</p>
+          <p class="product-price-old">{{item.integral}}积分 剩余:{{item.limit}}</p>
         </view>
       </view>
     </view>
@@ -29,8 +29,10 @@
 <view style="display:none">
   <image wx:for="{{images}}" wx:key="_id" id="{{item._id}}" src="{{item.image}}" bindload="onImageLoad"></image>
 </view>
-<navigator url='/pages/addProduct/addProduct'>
-  <view class='tianjia'>
-    <i class="iconfont icon-tianjia" style="color:#FF570E;font-size:80rpx"></i>
-  </view>
-</navigator>
+<block wx:if="{{isShowWrite}}">
+  <navigator url='/pages/addProduct/addProduct'>
+    <view class='tianjia'>
+      <i class="iconfont icon-tianjia" style="color:#FF570E;font-size:80rpx"></i>
+    </view>
+  </navigator>
+</block>

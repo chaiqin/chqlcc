@@ -14,7 +14,8 @@ Page({
     images: [],
     col1: [],
     col2: [],
-    length: 0
+    length: 0,
+    isShowWrite: false,
   },
 
   /**
@@ -23,6 +24,13 @@ Page({
   onLoad: function(options) {
     if (!app.checkIsLog()) {
       return;
+    }
+    //防止别人访问看到
+    var id = app.globalData.userinfo._id;
+    if (id == "XHVd5pT75u22NXek" || id == "XHVd9HffS3SWtvVh") {
+      this.setData({
+        isShowWrite: true
+      })
     }
     that = this;
     wx.getSystemInfo({

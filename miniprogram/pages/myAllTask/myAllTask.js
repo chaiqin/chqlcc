@@ -10,7 +10,8 @@ Page({
     taskList: [],
     length: 0,
     scrollH: 0,
-    is_love:0
+    is_love:0,
+    isShowWrite: false,
   },
 
   /**
@@ -31,6 +32,13 @@ Page({
         })
       }
     })
+    //防止别人访问看到
+    var id = app.globalData.userinfo._id;
+    if (id == "XHVd5pT75u22NXek" || id == "XHVd9HffS3SWtvVh") {
+      this.setData({
+        isShowWrite: true
+      })
+    }
     this.loadTask();
   },
 
