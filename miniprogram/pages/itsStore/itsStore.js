@@ -22,8 +22,8 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    if (!app.checkIsLog()) {
-      return;
+    if (app.globalData.userinfo == "") {
+      return
     }
     //防止别人访问看到
     var id = app.globalData.userinfo._id;
