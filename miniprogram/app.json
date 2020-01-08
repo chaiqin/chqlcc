@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/task/task",
+    "pages/auntChart/auntChart",
     "pages/memory/memory",
     "pages/write/write",
     "pages/me/me",

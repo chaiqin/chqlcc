@@ -5,11 +5,9 @@ page {
 }
 
 .userinfo {
-  margin-top: 40rpx;
-  height: 140rpx;
+  height: 180rpx;
   width: 100%;
-  background: #fff;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: #00EAFF;
   border-left: none;
   border-right: none;
   display: flex;
