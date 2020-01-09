@@ -1,4 +1,5 @@
 var echarts = require('../../utils/ec-canvas/echarts')
+var date = require('../../utils/date')
 let chart = null;
 function initChart(canvas, width, height) {
   const chart = echarts.init(canvas, null, {
@@ -8,6 +9,9 @@ function initChart(canvas, width, height) {
   canvas.setChart(chart);
 
   var option = {
+    tooltip: {
+      trigger: 'axis'
+    },
     xAxis: {
       type: 'category',
       data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
@@ -16,7 +20,7 @@ function initChart(canvas, width, height) {
       type: 'value'
     },
     series: [{
-      data: [820, 932, 901, 934, 1290, 1330, 1320],
+      data: [20, 32, 1, 4, 29, 13, 20],
       type: 'line'
     }]
   };
@@ -33,13 +37,18 @@ Page({
   data: {
     ec: {
       onInit: initChart
-    }
+    },
+    date: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var nowDate = date.getDate();
+    this.setData({
+      date: nowDate,
+    });
   },
 
   /**

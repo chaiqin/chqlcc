@@ -63,4 +63,19 @@
       </view>
     </navigator>
   </view>
+
+<view class='list'>
+    <navigator url='/pages/auntChart/auntChart'>
+      <view class='list-sub'>
+        <i class="iconfont icon-yima list-icon" style="color: pink;"></i>
+        <view class='list-right'>
+          <view class='list-content'>姨妈分析</view>
+          <view class='list-arrow'>
+            <i class="iconfont icon-right"></i>
+          </view>
+        </view>
+      </view>
+    </navigator>
+  </view>
+
 </view>
