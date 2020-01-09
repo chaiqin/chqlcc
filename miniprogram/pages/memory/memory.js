@@ -15,8 +15,14 @@ Page({
     limit: 10,
     loveUser: "",
     isShowImg: false,
-    isShowWrite: false,
-    swiperImgs: [],
+    swiperImgs: [
+      "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-1.jpg",
+      "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-2.jpg",
+      "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-3.jpg",
+      "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-4.jpg",
+      "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-5.jpg",
+      "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-6.jpg",
+    ],
   },
 
   /**
@@ -40,25 +46,10 @@ Page({
       this.setData({
         loveUser: res.data
       })
+      this.loadList();
     })
 
-    //防止别人访问看到
-    var id = app.globalData.userinfo._id;
-    if (id == "XHVd5pT75u22NXek" || id == "XHVd9HffS3SWtvVh"){
-      this.setData({
-        swiperImgs: [
-          "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-1.jpg",
-          "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-2.jpg",
-          "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-3.jpg",
-          "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-4.jpg",
-          "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-5.jpg",
-          "cloud://chqlcc-3c2367.6368-chqlcc-3c2367/images/lunbo-6.jpg",
-        ],
-        isShowWrite:true
-      })
-    }
-
-    this.loadList();
+    
   },
 
   /**
@@ -72,9 +63,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    if (this.data.list.length == 0) {
-      this.onLoad();
-    }
     if (this.data.isShowImg) {
       this.setData({
         isShowImg: false

@@ -1,4 +1,5 @@
 // pages/task/task.js
+const db = wx.cloud.database();
 const app = getApp();
 Page({
 
@@ -21,9 +22,12 @@ Page({
     if (!value) {
       return;
     } else {
-      app.globalData = {
-        userinfo: value
-      }
+      db.collection('users').doc(value._id).get().then(res => {
+        app.globalData = {
+          userinfo: res.data
+        }
+      })
+      
     }
 
     wx.getSystemInfo({

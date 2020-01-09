@@ -7,25 +7,28 @@
 </swiper>
 <view style="height:{{scrollH}}px">
   <view class='memoty' wx:key="unique" wx:for="{{list}}" wx:for-index="idx">
-    <view class='top'>
+    <view style='width:100rpx;'>
       <button class="userinfo-avatar" style="background-image: url('{{item.user.avatarUrl}}')"></button>
-      <view class='top-next'>
-        <view class='name'>{{item.user.nickName}}</view>
-        <view class='time'>{{item.create_time}}</view>
-      </view>
     </view>
-    <view class='content'>{{item.content}}</view>
-    <view class="gallery">
-      <view class="item" wx:for="{{item.images}}" wx:for-item="img">
-        <image src="{{img}}" data-src="{{img}}" data-index="{{idx}}" bindtap="previewImage" mode="aspectFill" />
+    <view>
+      <block wx:if="{{item.user.sex==1}}">
+        <view class='name' style='color:#3AC8FF'>{{item.user.nickName}}</view>
+      </block>
+      <block wx:else>
+        <view class='name' style='color:#FFADC4'>{{item.user.nickName}}</view>
+      </block>
+      <view class='time'>{{item.create_time}}</view>
+      <view class='content'>{{item.content}}</view>
+      <view class="gallery">
+        <view class="item" wx:for="{{item.images}}" wx:for-item="img">
+          <image src="{{img}}" data-src="{{img}}" data-index="{{idx}}" bindtap="previewImage" mode="aspectFill" />
+        </view>
       </view>
     </view>
   </view>
 </view>
-<block wx:if="{{isShowWrite}}">
 <navigator url='/pages/write/write'>
   <view class='tianjia'>
     <i class="iconfont icon-xie" style="color:red;font-size:90rpx" bindtap='shuaxin'></i>
   </view>
 </navigator>
-</block>
