@@ -4,6 +4,7 @@ ec-canvas {
 }
 
 .container {
+  margin-top: 15rpx;
   height: 500rpx;
 }
 

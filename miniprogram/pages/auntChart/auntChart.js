@@ -6,31 +6,12 @@ let chart = null;
 var that;
 
 function initChart(canvas, width, height) {
-  const chart = echarts.init(canvas, null, {
+  chart = echarts.init(canvas, null, {
     width: width,
     height: height
   });
   canvas.setChart(chart);
-
-  var option = {
-    tooltip: {
-      trigger: 'axis'
-    },
-    xAxis: {
-      type: 'category',
-      data: that.data.xAxis,
-    },
-    yAxis: {
-      type: 'value'
-    },
-    series: [{
-      data: that.data.series,
-      type: 'line'
-    }]
-  };
-
-
-  chart.setOption(option);
+  
   return chart;
 }
 Page({
@@ -43,8 +24,8 @@ Page({
       onInit: initChart
     },
     date: '',
-    xAxis: ['2019/01', '2019/02'],
-    series: [20, 4],
+    xAxis: [],
+    series: [],
   },
 
   /**
@@ -56,17 +37,43 @@ Page({
     this.setData({
       date: nowDate,
     });
-    db.collection('aunt').orderBy("create_time", 'asc').get().then(res => {
+    db.collection('aunt').limit(6).orderBy("create_time", 'desc').get().then(res => {
+      console.log(res.data)
       var series = [];
       var xAxis = [];
-      for (var i = 0; i < res.data.length; ++i) {
+      for (var i = res.data.length-1; i >= 0; i--) {
         series.push(res.data[i].day);
         xAxis.push(res.data[i].year + "/" + res.data[i].month);
       }
       that.setData({
-        series: xAxis,
+        series: series,
         xAxis: xAxis,
       });
+      var option = {
+        title:{
+          text:"姨妈分析图",
+          left: 'center',
+        },
+        tooltip: {
+          trigger: 'axis'
+        },
+        xAxis: {
+          type: 'category',
+          boundaryGap: false,
+          data: that.data.xAxis,
+          axisLabel:{
+            interval:0,
+          }
+        },
+        yAxis: {
+          type: 'value'
+        },
+        series: [{
+          data: that.data.series,
+          type: 'line'
+        }]
+      };
+      chart.setOption(option);
     })
   },
 
@@ -146,7 +153,7 @@ Page({
           showCancel: false,
           success(res) {
             if (res.confirm) {
-
+              that.onLoad();
             }
           }
         })
