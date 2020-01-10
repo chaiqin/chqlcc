@@ -2,6 +2,28 @@ ec-canvas {
   width: 100%;
   height: 100%;
 }
+
 .container {
-	height:500rpx;
-} 
+  height: 500rpx;
+}
+
+.publish {
+  width: 200rpx;
+  height: 80rpx;
+  border-radius: 15rpx;
+  background-color: #00eaff;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
+.time {
+  width: 250rpx;
+  margin: 0 auto;
+  margin-bottom: 25rpx;
+  border: 3rpx solid pink;
+  padding: 20rpx;
+  text-align: center;
+}

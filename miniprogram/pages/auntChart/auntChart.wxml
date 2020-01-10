@@ -2,11 +2,11 @@
   <ec-canvas id="mychart-dom-bar" canvas-id="mychart-bar" ec="{{ec}}"></ec-canvas>
 </view>
 
-<form bindsubmit="formSubmit" report-submit="true">
-  <picker mode="date" value="{{date}}" name='start_time' start="{{date}}" end="2019-12-01" bindchange="bindDateChange">
+<form bindsubmit="formSubmit" report-submit="true" class='form'>
+  <picker class='time' mode="date" value="{{date}}" name='create_time' start="{{date}}" end="2019-12-01" bindchange="bindDateChange">
     <view class="picker">
       {{date}}
     </view>
   </picker>
-  <button class='publish' form-type="submit">发布</button>
+  <button class='publish' form-type="submit">添加</button>
 </form>
