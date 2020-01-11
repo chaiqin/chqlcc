@@ -2,36 +2,11 @@
  <view class='title'> 已完成（）</view>
 <view class='list'>
   <view class='list-item'>
-  </view>
-  <view class='list-item'>
-  </view>
-  <view class='list-item'>
+    <i class="iconfont icon-tianjiatupian item-icon"></i>
+    <view class='item-title'>一起打屁</view> 
   </view>
    <view class='list-item'>
-  </view>
-   <view class='list-item'>
-  </view>
-   <view class='list-item'>
-  </view>
-   <view class='list-item'>
-  </view>
-   <view class='list-item'>
-  </view>
-   <view class='list-item'>
-  </view>
-   <view class='list-item'>
-  </view>
-   <view class='list-item'>
-  </view>
-   <view class='list-item'>
-  </view>
-   <view class='list-item'>
-  </view>
-   <view class='list-item'>
-  </view>
-   <view class='list-item'>
-  </view>
-   <view class='list-item'>
+   <i class="iconfont icon-jiaguanzhuhuati item-add"></i>
   </view>
 </view>
 </view>

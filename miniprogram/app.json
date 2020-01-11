@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/lifeAdd/lifeAdd",
     "pages/lifeList/lifeList",
     "pages/task/task",
     "pages/auntChart/auntChart",

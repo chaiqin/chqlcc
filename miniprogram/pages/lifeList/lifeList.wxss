@@ -1,25 +1,48 @@
 /* pages/lifeList/lifeList.wxss */
+page {
+  height: 100%;
+  background-color: #FCF2F5;
+}
 
 .content {
   padding: 0 20rpx;
   margin: 0 auto;
-  background-color: #FCF2F5;
 }
 
 .title{
   font-size: 36rpx;
+  padding-top: 20rpx;
 }
 
 .list{
   display: flex;
   justify-content: space-between;
   flex-wrap:wrap;
-  margin-top: 10rpx;
+  margin-top: 20rpx;
 }
 
 .list-item{
   width: 345rpx;
   height: 345rpx;
-  background-color: white;
+  background-color: #F7F7F7;
   margin-bottom: 20rpx;
+  border-radius:20rpx;
+  box-shadow: 5rpx 5rpx 15rpx rgb(250, 207, 214);
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  text-align: center;
+  color: #AFAFAF;
+}
+
+.item-icon{
+  font-size:100rpx;
+}
+
+.item-title{
+  font-size:36rpx;
+}
+
+.item-add{
+  font-size:150rpx;
 }
