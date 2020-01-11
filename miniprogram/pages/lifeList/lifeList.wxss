@@ -1,0 +1,25 @@
+/* pages/lifeList/lifeList.wxss */
+
+.content {
+  padding: 0 20rpx;
+  margin: 0 auto;
+  background-color: #FCF2F5;
+}
+
+.title{
+  font-size: 36rpx;
+}
+
+.list{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap:wrap;
+  margin-top: 10rpx;
+}
+
+.list-item{
+  width: 345rpx;
+  height: 345rpx;
+  background-color: white;
+  margin-bottom: 20rpx;
+}
