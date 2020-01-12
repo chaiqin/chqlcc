@@ -1,12 +1,21 @@
 <view class='content'>
- <view class='title'> 已完成（）</view>
-<view class='list'>
-  <view class='list-item'>
-    <i class="iconfont icon-tianjiatupian item-icon"></i>
-    <view class='item-title'>一起打屁</view> 
+  <view class='title'> 已完成（{{finishNum}}/{{list.length}}）</view>
+  <view class='list'>
+    <block wx:for="{{list}}">
+     <navigator url="/pages/lifeFinish/lifeFinish?id={{item._id}}">
+      <view class='list-item'>
+        <i class="iconfont icon-tianjiatupian item-icon"></i>
+        <view class='item-title'>{{item.title}}</view>
+      </view>
+      </navigator>
+    </block>
+    <view class='list-item'>
+      <form bindsubmit="formSubmit">
+        <input class='item.input' type='text' name='title' placeholder='你想一起做？' value='{{title}}'></input>
+        <button plain="true" form-type="submit">
+          <i class="iconfont icon-jiaguanzhuhuati item-add"></i>
+        </button>
+      </form>
+    </view>
   </view>
-   <view class='list-item'>
-   <i class="iconfont icon-jiaguanzhuhuati item-add"></i>
-  </view>
-</view>
 </view>

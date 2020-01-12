@@ -1,0 +1,17 @@
+<form bindsubmit="formSubmit">
+  <view class='interval'>
+    <view class='title'>心情：</view>
+    <view class='title-content'>
+      <input type='text' name='title' placeholder='请输入你的心情'></input>
+    </view>
+  </view>
+  <view class="item" wx:if="{{img!=''}}" wx:key="">
+    <image src="{{img}}" data-src="{{img}}" bindtap="previewImage" mode="aspectFill" />
+    <!-- 删除按钮 -->
+    <view class="delete" bindtap="delete">X</view>
+  </view>
+  <view class="item" wx:if="{{img==''}}" bindtap="chooseImage">
+    <view class='addIcon'>+</view>
+  </view>
+  <button class='publish' form-type="submit">完成</button>
+</form>

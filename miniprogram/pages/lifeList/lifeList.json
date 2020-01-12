@@ -1,4 +1,5 @@
 {
   "usingComponents": {},
-  "navigationBarTitleText": "恋人清单"
+  "navigationBarTitleText": "恋人清单",
+  "navigationBarBackgroundColor": "#FFC0CB"
 }

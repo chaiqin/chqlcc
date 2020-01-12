@@ -1,18 +1,36 @@
 // pages/lifeList/lifeList.js
+var utils = require('../../utils/utils.js')
+const db = wx.cloud.database();
+const _ = db.command
+var that;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    title:"",
+    list:[],
+    finishNum:0,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    that = this;
+    db.collection('lifeList').get().then(res => {
+      that.setData({
+        list: res.data,
+      });
+    })
+    db.collection('lifeList').where({
+      img:_.neq("")
+    }).count().then(res => {
+      that.setData({
+        finishNum: res.total,
+      });
+    })
   },
 
   /**
@@ -62,5 +80,41 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  formSubmit(e) {
+    utils.showLoading('发布中...');
+    console.log('form发生了submit事件，携带数据为：', e.detail)
+    if(e.detail.value.title==""){
+      wx.showModal({
+        title: '来自亲的提示',
+        content: '请输入标题，胖婵',
+        showCancel: false
+      })
+      utils.hideLoading();
+      return;
+    }
+    db.collection('lifeList').add({
+      data: {
+        title: e.detail.value.title,
+        img:"",
+      }
+    })
+      .then(res => {
+        that.setData({
+          title:""
+        });
+        utils.hideLoading();
+        console.log(res)
+        wx.showModal({
+          title: '提示',
+          content: '添加成功',
+          showCancel: false,
+          success(res) {
+            if (res.confirm) {
+              that.onLoad();
+            }
+          }
+        })
+      })
+  },
 })
