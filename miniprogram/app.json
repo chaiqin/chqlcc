@@ -1,7 +1,7 @@
 {
   "pages": [
-    "pages/lifeAdd/lifeAdd",
     "pages/lifeList/lifeList",
+    "pages/lifeAdd/lifeAdd",
     "pages/task/task",
     "pages/auntChart/auntChart",
     "pages/memory/memory",
