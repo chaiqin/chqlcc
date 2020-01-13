@@ -2,12 +2,20 @@
   <view class='title'> 已完成（{{finishNum}}/{{list.length}}）</view>
   <view class='list'>
     <block wx:for="{{list}}">
-     <navigator url="/pages/lifeFinish/lifeFinish?id={{item._id}}">
-      <view class='list-item'>
-        <i class="iconfont icon-tianjiatupian item-icon"></i>
-        <view class='item-title'>{{item.title}}</view>
-      </view>
-      </navigator>
+      <block wx:if="{{item.img!=''}}">
+        <view class='list-item'>
+          <image src='{{item.img}}' mode="aspectFill" />
+          <view class='item-title2' data-src="{{item.img}}" bindtap="previewImage">{{item.title}}</view>
+        </view>
+      </block>
+      <block wx:if="{{item.img==''}}">
+        <navigator url="/pages/lifeFinish/lifeFinish?id={{item._id}}">
+          <view class='list-item'>
+            <i class="iconfont icon-tianjiatupian item-icon"></i>
+            <view class='item-title'>{{item.title}}</view>
+          </view>
+        </navigator>
+      </block>
     </block>
     <view class='list-item'>
       <form bindsubmit="formSubmit">

@@ -35,6 +35,12 @@ page {
   justify-content: center;
   text-align: center;
   color: #afafaf;
+  position:relative;
+}
+
+.list-item image {
+  width: 100%;
+  height: 100%;
 }
 
 .item-icon {
@@ -43,6 +49,17 @@ page {
 
 .item-title {
   font-size: 36rpx;
+}
+
+.item-title2 {
+  line-height: 345rpx;
+  font-size: 30rpx;
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  z-inden:2;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
 .item-add {
@@ -58,9 +75,9 @@ page {
 }
 
 button[plain] {
-  size:90rpx;
+  size: 90rpx;
   height: 70rpx;
-  line-height:70rpx;
+  line-height: 70rpx;
   width: 90rpx;
   padding: 0;
   border: 0;

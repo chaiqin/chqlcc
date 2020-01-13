@@ -38,8 +38,8 @@ page {
 .item {    
   position: relative;    
   margin:10rpx auto;
-  width: 300rpx;
-  height: 300rpx;
+  width: 600rpx;
+  height: 600rpx;
 }
 .item image{
   width: 100%;
@@ -49,10 +49,10 @@ page {
 /*add按钮*/
 .item .addIcon{
   position:relative;
-  width:300rpx;
-  height:300rpx;
+  width:600rpx;
+  height:600rpx;
   text-align:center;
-  line-height:300rpx;
+  line-height:600rpx;
   font-size:80rpx;
   background: #f2f2f2;
   color: #555;

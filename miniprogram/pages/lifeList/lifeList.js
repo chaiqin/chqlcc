@@ -44,7 +44,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.onLoad();
   },
 
   /**
@@ -116,5 +116,15 @@ Page({
           }
         })
       })
+  },
+
+  // 图片预览
+  previewImage: function (e) {
+    console.log(e.target.dataset.src)
+    var current = e.target.dataset.src
+    wx.previewImage({
+      current: current,
+      urls: [current]
+    })
   },
 })

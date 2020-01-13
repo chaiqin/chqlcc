@@ -11,12 +11,12 @@
       <view class="userinfo-integral">
         <block wx:if="{{userinfo == null}}">
           <navigator url='/pages/authorize/authorize' style='color:blue'>
-          去登录
+            去登录
           </navigator>
-          </block>
-          <block wx:if="{{userinfo != null}}">
-            累计积分：{{userinfo.integral}}
-          </block>
+        </block>
+        <block wx:if="{{userinfo != null}}">
+          累计积分：{{userinfo.integral}}
+        </block>
       </view>
     </view>
     <view class='qiandao'>
@@ -64,12 +64,23 @@
     </navigator>
   </view>
 
-<view class='list'>
+  <view class='list'>
     <navigator url='/pages/auntChart/auntChart'>
       <view class='list-sub'>
         <i class="iconfont icon-yima list-icon" style="color: pink;"></i>
         <view class='list-right'>
           <view class='list-content'>姨妈分析</view>
+          <view class='list-arrow'>
+            <i class="iconfont icon-right"></i>
+          </view>
+        </view>
+      </view>
+    </navigator>
+    <navigator url='/pages/lifeList/lifeList'>
+      <view class='list-sub'>
+        <i class="iconfont icon-qingdan list-icon" style="color: pink;font-size:50rpx;"></i>
+        <view class='list-right'>
+          <view class='list-content'>恋爱清单</view>
           <view class='list-arrow'>
             <i class="iconfont icon-right"></i>
           </view>

@@ -1,5 +1,7 @@
 {
   "usingComponents": {
     "ec-canvas": "../../utils/ec-canvas/ec-canvas"
-  }
+  },
+  "navigationBarTitleText": "亲戚来了",
+  "navigationBarBackgroundColor": "#FFC0CB"
 }

@@ -2,7 +2,7 @@
   <view class='interval'>
     <view class='title'>心情：</view>
     <view class='title-content'>
-      <input type='text' name='title' placeholder='请输入你的心情'></input>
+      <input type='text' name='mood' placeholder='请输入你的心情'></input>
     </view>
   </view>
   <view class="item" wx:if="{{img!=''}}" wx:key="">

@@ -1,8 +1,8 @@
 {
   "pages": [
+    "pages/task/task",
     "pages/lifeList/lifeList",
     "pages/lifeFinish/lifeFinish",
-    "pages/task/task",
     "pages/auntChart/auntChart",
     "pages/memory/memory",
     "pages/write/write",
