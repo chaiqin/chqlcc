@@ -1,5 +1,6 @@
 {
   "usingComponents": {},
+  "enablePullDownRefresh": true,
   "navigationBarTitleText": "恋人清单",
   "navigationBarBackgroundColor": "#FFC0CB"
 }

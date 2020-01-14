@@ -8,7 +8,6 @@ page {
 .content {
   padding: 0 20rpx;
   margin: 0 auto;
-  margin-bottom: 60rpx;
 }
 
 .title {
@@ -21,6 +20,7 @@ page {
   justify-content: space-between;
   flex-wrap: wrap;
   margin-top: 20rpx;
+  margin-bottom: 40rpx;
 }
 
 .list-item {

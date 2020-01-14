@@ -1,6 +1,14 @@
 <view class='content'>
-  <view class='title'> 已完成（{{finishNum}}/{{list.length}}）</view>
+  <view class='title'> 已完成（{{finishNum}}/{{totalNum}}）</view>
   <view class='list'>
+  <view class='list-item'>
+      <form bindsubmit="formSubmit">
+        <input class='item.input' type='text' name='title' placeholder='你想一起做？' value='{{title}}'></input>
+        <button plain="true" form-type="submit">
+          <i class="iconfont icon-jiaguanzhuhuati item-add"></i>
+        </button>
+      </form>
+    </view>
     <block wx:for="{{list}}">
       <block wx:if="{{item.img!=''}}">
         <view class='list-item'>
@@ -17,13 +25,5 @@
         </navigator>
       </block>
     </block>
-    <view class='list-item'>
-      <form bindsubmit="formSubmit">
-        <input class='item.input' type='text' name='title' placeholder='你想一起做？' value='{{title}}'></input>
-        <button plain="true" form-type="submit">
-          <i class="iconfont icon-jiaguanzhuhuati item-add"></i>
-        </button>
-      </form>
-    </view>
   </view>
 </view>

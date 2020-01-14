@@ -11,6 +11,7 @@ Page({
   data: {
     title:"",
     list:[],
+    totalNum:0,
     finishNum:0,
   },
 
@@ -19,9 +20,9 @@ Page({
    */
   onLoad: function (options) {
     that = this;
-    db.collection('lifeList').get().then(res => {
+    db.collection('lifeList').count().then(res => {
       that.setData({
-        list: res.data,
+        totalNum: res.total,
       });
     })
     db.collection('lifeList').where({
@@ -31,6 +32,7 @@ Page({
         finishNum: res.total,
       });
     })
+    this.loadData();
   },
 
   /**
@@ -44,7 +46,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.onLoad();
+    // this.onLoad();
   },
 
   /**
@@ -65,14 +67,23 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    let data = {
+      title: "",
+      list: [],
+      totalNum: 0,
+      finishNum: 0,
+    }
+    this.setData(data)
+    this.onLoad()
+    console.log('任务下拉刷新')
+    wx.stopPullDownRefresh()
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    this.loadData();
   },
 
   /**
@@ -127,4 +138,13 @@ Page({
       urls: [current]
     })
   },
+
+  //加载数据
+  loadData: function (e){
+    db.collection('lifeList').skip(this.data.list.length).get().then(res => {
+      that.setData({
+        list: that.data.list.concat(res.data),
+      });
+    })
+  }
 })
