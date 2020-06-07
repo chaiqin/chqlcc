@@ -15,6 +15,12 @@
 </view>
 <form bindsubmit="formSubmit">
 	<view class='interval'>
+		<view class='title'><i class="iconfont icon-qian text-icon"></i>金额：</view>
+		<view class='title-content'>
+			<input type='text' name='money'></input>
+		</view>
+	</view>
+		<view class='interval'>
 		<view class='title'><i class="iconfont icon-Group text-icon"></i>描述：</view>
 		<view class='title-content'>
 			<input type='text' name='describe'></input>

@@ -1,4 +1,11 @@
 <!--pages/money/money.wxml-->
+<view class="topBar">
+	<view class="total">
+		<text class="total-text">总金额\n</text>
+		<text class="total-money">34513</text>
+	</view>
+</view>
+
 <view class='tabbar'>
 	<navigator url='/pages/moneyAdd/moneyAdd'>
 		<i class="iconfont icon-add-fill" style="color:#F9DB61;font-size:100rpx" bindtap='shuaxin'></i>
