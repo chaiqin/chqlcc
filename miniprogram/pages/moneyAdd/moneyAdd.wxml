@@ -4,12 +4,31 @@
 	<text bindtap='changTab' class="{{currentTab==2 ? 'active' : ''}}" data-current='2'>收入</text>
 </view>
 <view class="select-icon">
-	<view class="select-icon-item">
-		<view class="icon-btn {{currentIcon==1 ? 'select-icon-active' : ''}}">
-			<i class="iconfont icon-yima icon-btn-ty" bindtap='selectIcon'></i>
+	<view class="select-icon-item" wx:for="{{list}}">
+		<view data-icon="{{item.icon}}" class="icon-btn {{currentIcon==item.icon ? 'select-icon-active' : ''}}" bindtap='selectIcon'>
+			<i class="iconfont icon-btn-ty {{item.icon}}"></i>
 		</view>
 		<view class="select-name">
-			服装
+			{{item.name}}
 		</view>
 	</view>
 </view>
+<form bindsubmit="formSubmit">
+	<view class='interval'>
+		<view class='title'><i class="iconfont icon-Group text-icon"></i>描述：</view>
+		<view class='title-content'>
+			<input type='text' name='describe'></input>
+		</view>
+	</view>
+	<view class='interval'>
+    <view class='title'><i class="iconfont icon-shijian1 text-icon"></i>日期：</view>
+    <view class='title-content'>
+      <picker mode="date" value="{{date}}" name='date' bindchange="bindDateChange">
+        <view class="picker">
+          {{date}}
+        </view>
+      </picker>
+    </view>
+  </view>
+	<button class='submit' form-type="submit">确定</button>
+</form>

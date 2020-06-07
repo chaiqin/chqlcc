@@ -24,13 +24,13 @@
   background-color: black;
 }
 
-.select-icon{
+.select-icon {
   margin-top: 100rpx;
   display: flex;
   flex-wrap: wrap;
 }
 
-.select-icon-item{
+.select-icon-item {
   width: 102rpx;
   height: 150rpx;
   margin-left: 40rpx;
@@ -38,7 +38,7 @@
   text-align: center;
 }
 
-.icon-btn{
+.icon-btn {
   width: 102rpx;
   height: 102rpx;
   line-height: 102rpx;
@@ -47,16 +47,58 @@
   text-align: center;
 }
 
-.icon-btn-ty{
+.icon-btn-ty {
   font-size: 60rpx;
 }
 
-.select-name{
+.select-name {
   color: #9E9E9E;
   font-size: 30rpx;
   margin-top: 8rpx;
 }
 
-.select-icon-active{
+.select-icon-active {
   background-color: #F9DB61;
+}
+
+.interval {
+  width: 100%;
+  height: 70rpx;
+  display: flex;
+  flex-direction: row;
+  background-color: #ffffff;
+  border-bottom: 2rpx solid #f6f6f6;
+  align-items: center;
+  font-size: 30rpx;
+}
+
+.title {
+  width: 150rpx;
+  text-align: right;
+}
+
+.title-content {
+  margin: auto 0;
+  width: 600rpx;
+}
+
+.title-text {
+  height: 30rpx;
+}
+
+.text-icon {
+  color: #F9DB61;
+  font-size: 34rpx;
+  margin-right: 4rpx
+}
+
+.submit {
+  width: 130rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  margin-top: 40rpx;
+  margin-left: 550rpx;
+  border-radius: 15rpx;
+  background-color: #F9DB61;
+  font-size: 30rpx;
 }
