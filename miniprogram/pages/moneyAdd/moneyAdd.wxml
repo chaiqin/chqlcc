@@ -1,0 +1,15 @@
+<!--pages/moneyAdd/moneyAdd.wxml-->
+<view class="tab-box">
+	<text bindtap='changTab' class="{{currentTab==1 ? 'active' : ''}}" data-current='1'>支出</text>
+	<text bindtap='changTab' class="{{currentTab==2 ? 'active' : ''}}" data-current='2'>收入</text>
+</view>
+<view class="select-icon">
+	<view class="select-icon-item">
+		<view class="icon-btn {{currentIcon==1 ? 'select-icon-active' : ''}}">
+			<i class="iconfont icon-yima icon-btn-ty" bindtap='selectIcon'></i>
+		</view>
+		<view class="select-name">
+			服装
+		</view>
+	</view>
+</view>

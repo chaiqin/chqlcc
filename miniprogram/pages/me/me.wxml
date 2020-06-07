@@ -87,6 +87,17 @@
         </view>
       </view>
     </navigator>
+    <navigator url='/pages/money/money'>
+      <view class='list-sub'>
+        <i class="iconfont icon-jizhang list-icon" style="color: #F9DB61;"></i>
+        <view class='list-right'>
+          <view class='list-content'>公基金</view>
+          <view class='list-arrow'>
+            <i class="iconfont icon-right"></i>
+          </view>
+        </view>
+      </view>
+    </navigator>
   </view>
 
 </view>

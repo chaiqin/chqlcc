@@ -1,0 +1,6 @@
+<!--pages/money/money.wxml-->
+<view class='tabbar'>
+	<navigator url='/pages/moneyAdd/moneyAdd'>
+		<i class="iconfont icon-add-fill" style="color:#F9DB61;font-size:100rpx" bindtap='shuaxin'></i>
+	</navigator>
+</view>

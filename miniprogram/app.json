@@ -1,5 +1,7 @@
 {
   "pages": [
+    "pages/moneyAdd/moneyAdd",
+    "pages/money/money",
     "pages/task/task",
     "pages/lifeList/lifeList",
     "pages/lifeFinish/lifeFinish",

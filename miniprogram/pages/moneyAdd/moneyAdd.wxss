@@ -1,0 +1,62 @@
+/* pages/moneyAdd/moneyAdd.wxss */
+.tab-box {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80rpx;
+  display: flex;
+  background: #F9DB61;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.tab-box text {
+  font-size: 32rpx;
+  height: 55rpx;
+  width: 200rpx;
+  line-height: 55rpx;
+  border: 2rpx solid black;
+  text-align: center;
+}
+
+.active {
+  color: #F9DB61;
+  background-color: black;
+}
+
+.select-icon{
+  margin-top: 100rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.select-icon-item{
+  width: 102rpx;
+  height: 150rpx;
+  margin-left: 40rpx;
+  margin-bottom: 20rpx;
+  text-align: center;
+}
+
+.icon-btn{
+  width: 102rpx;
+  height: 102rpx;
+  line-height: 102rpx;
+  background-color: #F5F5F5;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.icon-btn-ty{
+  font-size: 60rpx;
+}
+
+.select-name{
+  color: #9E9E9E;
+  font-size: 30rpx;
+  margin-top: 8rpx;
+}
+
+.select-icon-active{
+  background-color: #F9DB61;
+}
