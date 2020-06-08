@@ -1,14 +1,14 @@
 {
   "pages": [
-    "pages/moneyAdd/moneyAdd",
-    "pages/money/money",
     "pages/task/task",
+    "pages/me/me",
+    "pages/money/money",
+    "pages/moneyAdd/moneyAdd",
     "pages/lifeList/lifeList",
     "pages/lifeFinish/lifeFinish",
     "pages/auntChart/auntChart",
     "pages/memory/memory",
     "pages/write/write",
-    "pages/me/me",
     "pages/authorize/authorize",
     "pages/myAllTask/myAllTask",
     "pages/seeTask/seeTask",

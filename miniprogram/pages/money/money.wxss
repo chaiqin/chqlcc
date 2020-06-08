@@ -1,12 +1,10 @@
 /* pages/money/money.wxss */
 .tabbar {
   position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 160rpx;
-  display: flex;
-  justify-content: space-around;
+  bottom: 60rpx;
+  left: 325rpx;
+  height: 100rpx;
+  width: 100rpx;
 }
 
 .topBar{
@@ -30,3 +28,46 @@
 .total-money{
   font-size: 60rpx;
 }
+
+.record{
+  margin-top: 150rpx;
+  font-size: 30rpx;
+}
+
+.record-item{
+  display: flex;
+  width: 100%;
+  height: 110rpx;
+  line-height: 110rpx;
+}
+
+.icon-btn {
+  width: 80rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  background-color: #F9DB61;
+  border-radius: 50%;
+  text-align: center;
+  margin:auto 30rpx auto 30rpx;
+}
+
+.icon-btn-ty {
+  font-size: 45rpx;
+}
+
+.record-content{
+  width: 610rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1rpx solid rgba(0, 0, 0, 0.1);
+}
+
+.record-describe{
+  width: 470rpx;
+  overflow: hidden;
+}
+
+.record-money{
+  margin-right: 30rpx;
+}
+

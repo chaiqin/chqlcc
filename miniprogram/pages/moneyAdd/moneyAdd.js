@@ -48,6 +48,7 @@ Page({
     db.collection('icon').where({
       type: that.data.currentTab
     }).orderBy('sort', 'asc').get().then(res => {
+      console.log(res.data)
       that.setData({
         list: res.data,
         length: res.data.length

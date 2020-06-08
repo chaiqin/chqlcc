@@ -2,12 +2,35 @@
 <view class="topBar">
 	<view class="total">
 		<text class="total-text">总金额\n</text>
-		<text class="total-money">34513</text>
+		<text class="total-money">{{total}}</text>
 	</view>
 </view>
-
-<view class='tabbar'>
-	<navigator url='/pages/moneyAdd/moneyAdd'>
-		<i class="iconfont icon-add-fill" style="color:#F9DB61;font-size:100rpx" bindtap='shuaxin'></i>
-	</navigator>
+<view class="record">
+	<view class="record-item" wx:for="{{list}}">
+		<view class="icon-btn">
+			<i class="iconfont icon-btn-ty {{item.icon}}"></i>
+		</view>
+		<view class="record-content">
+			<block wx:if="{{item.user.sex==1}}">
+				<view class="record-describe" style='color:#3AC8FF'>{{item.describe}}</view>
+			</block>
+			<block wx:else>
+				<view class="record-describe" style='color:#FFADC4'>{{item.describe}}</view>
+			</block>
+			<view class="record-money">
+				<block wx:if="{{item.type==1}}">
+					-
+				</block>
+				<block wx:else>
+					+
+				</block>
+				{{item.money}}
+			</view>
+		</view>
+	</view>
 </view>
+<navigator url='/pages/moneyAdd/moneyAdd'>
+<view class='tabbar'>
+		<i class="iconfont icon-add-fill" style="color:#F9DB61;font-size:100rpx" bindtap='shuaxin'></i>
+</view>
+</navigator>
