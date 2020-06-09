@@ -63,7 +63,7 @@
 }
 
 .record-describe{
-  width: 470rpx;
+  width: 410rpx;
   overflow: hidden;
 }
 
