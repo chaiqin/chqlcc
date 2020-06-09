@@ -70,8 +70,8 @@ Page({
     var data = e.detail.value;
     if (that.data.currentIcon == "" || data.money == "" || data.describe == "") {
       wx.showModal({
-        title: '胖婵警告',
-        content: '我是猪，内容还没填好！',
+        title: '警告',
+        content: '内容还没填好！',
         showCancel: false
       })
       utils.hideLoading();

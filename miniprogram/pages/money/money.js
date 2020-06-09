@@ -28,8 +28,7 @@ Page({
 
   //加载列表
   loadList: function (e) {
-    var list = that.data.list;
-    var total = that.data.total;
+    var total=0;
     var userinfo = app.globalData.userinfo;
     var loveUser = that.data.loveUser;
     db.collection('moneyRecord').orderBy('date', 'desc').get().then(res => {
@@ -46,10 +45,8 @@ Page({
           }
         }
         console.log(res);
-        list = list.concat(res.data);
         that.setData({
-          list: list,
-          length: list.length,
+          list: res.data,
           total:total
         })
       }).catch(err => {
