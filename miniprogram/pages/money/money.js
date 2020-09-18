@@ -38,21 +38,31 @@ Page({
           } else if (res.data[i].user_id == loveUser._id) {
             res.data[i].user = loveUser;
           }
-          if(res.data[i].type==1){
-            total = Number(total) - Number(res.data[i].money)
-          }else{
-            total = Number(total) + Number(res.data[i].money)
-          }
         }
         console.log(res);
         that.setData({
-          list: res.data,
-          total:total
+          list: res.data
         })
       }).catch(err => {
         console.error(err)
       })
 
+      const $ = db.command.aggregate
+      db.collection('moneyRecord')
+        .aggregate()
+        .group({
+          _id: '$type',
+          money: $.sum('$money')
+        })
+        .end()
+        .then(res =>{
+          for (var i = 0; i < res.list.length; i++) {
+            total += res.list[i].money
+          }
+          that.setData({
+            total:total
+          })
+        })
   },
 
   /**

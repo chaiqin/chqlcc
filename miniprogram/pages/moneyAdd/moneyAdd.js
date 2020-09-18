@@ -83,7 +83,7 @@ Page({
       data: {
         type: that.data.currentTab,
         icon: that.data.currentIcon,
-        money: data.money,
+        money: Number(data.money),
         describe: data.describe,
         date: data.date,
         user_id: app.globalData.userinfo._id,
